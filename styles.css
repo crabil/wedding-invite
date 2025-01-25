@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+#intro {
+  padding: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#swipe-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#swipe-hint.visible {
+  opacity: 1;
+}
+
+.swipe-icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.swipe-caption {
+  font-size: 16px;
+  color: #555;
+}
