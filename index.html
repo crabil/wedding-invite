@@ -5,14 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Include Swiper.js for swipe functionality -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-  <!-- Intro Section -->
-  <div id="intro">
-    <h1>Welcome to Our Wedding!</h1>
-    <p>Please select your preferred language:</p>
-    <button onclick="selectLanguage('en')">English</button>
-    <button onclick="selectLanguage('de')">Deutsch</button>
+  <!-- Swiper Container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slide 1: Intro -->
+      <div class="swiper-slide">
+        <div id="intro">
+          <h1>Welcome to Our Wedding!</h1>
+          <p>Please select your preferred language:</p>
+          <button onclick="selectLanguage('en')">English</button>
+          <button onclick="selectLanguage('de')">Deutsch</button>
+        </div>
+      </div>
+      <!-- Slide 2: RSVP -->
+      <div class="swiper-slide">
+        <h2>RSVP</h2>
+        <form name="rsvp" method="POST" data-netlify="true">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="number" name="guests" placeholder="Number of Guests" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- Slide 3: Gift Information -->
+      <div class="swiper-slide">
+        <h2>Gift Contributions</h2>
+        <p>We appreciate your generosity!</p>
+        <p><strong>IBAN:</strong> YOUR_IBAN_HERE</p>
+        <p><strong>BIC:</strong> YOUR_BIC_HERE</p>
+      </div>
+    </div>
   </div>
 
   <!-- Swipe Hint -->
@@ -21,7 +46,8 @@
     <p class="swipe-caption">Swipe right</p>
   </div>
 
-  <!-- JavaScript -->
+  <!-- Include Swiper.js and Custom Script -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
