@@ -10,35 +10,52 @@ const swiper = new Swiper('.swiper-container', {
   spaceBetween: 20, // Spacing between cards
 });
 
-// Handle language selection (no popups)
+// Language translations
+const translations = {
+  en: {
+    welcome: "Welcome to Our Wedding!",
+    select: "Please select your preferred language:",
+    rsvp: "RSVP",
+    namePlaceholder: "Your Name",
+    guestsPlaceholder: "Number of Guests",
+    submit: "Submit",
+    giftTitle: "Gift Contributions",
+    giftMessage: "We appreciate your generosity! You can deposit your gifts at:",
+  },
+  ar: {
+    welcome: "مرحبًا بكم في حفل زفافنا!",
+    select: "يرجى اختيار اللغة المفضلة لديك:",
+    rsvp: "رد الدعوة",
+    namePlaceholder: "اسمك",
+    guestsPlaceholder: "عدد الضيوف",
+    submit: "إرسال",
+    giftTitle: "المساهمات المالية",
+    giftMessage: "نقدّر كرمكم! يمكنكم إيداع هداياكم في:",
+  },
+};
+
+// Handle language selection
 function selectLanguage(language) {
-  console.log(`Language selected: ${language}`);
-  // Store language in localStorage or use it to customize content dynamically
+  // Get all translatable elements
+  const welcomeText = document.getElementById("welcome-text");
+  const selectText = document.getElementById("select-text");
+  const rsvpTitle = document.getElementById("rsvp-title");
+  const namePlaceholder = document.getElementById("name-placeholder");
+  const guestsPlaceholder = document.getElementById("guests-placeholder");
+  const submitBtn = document.getElementById("submit-btn");
+  const giftTitle = document.getElementById("gift-title");
+  const giftMessage = document.getElementById("gift-message");
+
+  // Apply translations
+  welcomeText.textContent = translations[language].welcome;
+  selectText.textContent = translations[language].select;
+  rsvpTitle.textContent = translations[language].rsvp;
+  namePlaceholder.placeholder = translations[language].namePlaceholder;
+  guestsPlaceholder.placeholder = translations[language].guestsPlaceholder;
+  submitBtn.textContent = translations[language].submit;
+  giftTitle.textContent = translations[language].giftTitle;
+  giftMessage.textContent = translations[language].giftMessage;
+
+  // Automatically move to the next slide
+  swiper.slideNext();
 }
-
-// Swipe hint functionality
-let inactivityTimeout;
-
-function showSwipeHint() {
-  const swipeHint = document.getElementById("swipe-hint");
-  swipeHint.classList.add("visible");
-
-  // Hide the hint after 3 seconds
-  setTimeout(() => {
-    swipeHint.classList.remove("visible");
-  }, 3000);
-}
-
-// Reset inactivity timer on any activity
-function resetInactivityTimer() {
-  clearTimeout(inactivityTimeout);
-  inactivityTimeout = setTimeout(showSwipeHint, 5000); // Show hint after 5 seconds of inactivity
-}
-
-// Attach event listeners for activity detection
-document.addEventListener("mousemove", resetInactivityTimer);
-document.addEventListener("touchstart", resetInactivityTimer);
-document.addEventListener("keydown", resetInactivityTimer);
-
-// Initialize the timer on page load
-resetInactivityTimer();

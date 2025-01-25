@@ -40,28 +40,3 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-/* Swipe Hint */
-#swipe-hint {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-#swipe-hint.visible {
-  opacity: 1;
-}
-
-.swipe-icon {
-  width: 50px;
-  margin-bottom: 5px;
-}
-
-.swipe-caption {
-  font-size: 16px;
-  color: #555;
-}

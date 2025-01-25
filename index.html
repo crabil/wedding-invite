@@ -12,33 +12,33 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       
-      <!-- Card 1: Intro -->
+      <!-- Slide 1: Language Selection -->
       <div class="swiper-slide">
         <div class="card">
-          <h1>Welcome to Our Wedding!</h1>
-          <p>Select your preferred language:</p>
+          <h1 id="welcome-text">Welcome to Our Wedding!</h1>
+          <p id="select-text">Please select your preferred language:</p>
           <button onclick="selectLanguage('en')">English</button>
-          <button onclick="selectLanguage('de')">Deutsch</button>
+          <button onclick="selectLanguage('ar')">العربية</button>
         </div>
       </div>
-
-      <!-- Card 2: RSVP -->
+      
+      <!-- Slide 2: RSVP -->
       <div class="swiper-slide">
         <div class="card">
-          <h2>RSVP</h2>
+          <h2 id="rsvp-title">RSVP</h2>
           <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="number" placeholder="Number of Guests" required>
-            <button type="submit">Submit</button>
+            <input type="text" id="name-placeholder" placeholder="Your Name" required>
+            <input type="number" id="guests-placeholder" placeholder="Number of Guests" required>
+            <button type="submit" id="submit-btn">Submit</button>
           </form>
         </div>
       </div>
 
-      <!-- Card 3: Gift Info -->
+      <!-- Slide 3: Gift Information -->
       <div class="swiper-slide">
         <div class="card">
-          <h2>Gift Contributions</h2>
-          <p>We appreciate your generosity! You can deposit your gifts at:</p>
+          <h2 id="gift-title">Gift Contributions</h2>
+          <p id="gift-message">We appreciate your generosity! You can deposit your gifts at:</p>
           <p><strong>IBAN:</strong> DE12345678901234567890</p>
           <p><strong>BIC:</strong> ABCDDEFF</p>
         </div>
@@ -48,12 +48,6 @@
 
     <!-- Pagination (Dots for Navigation) -->
     <div class="swiper-pagination"></div>
-  </div>
-
-  <!-- Swipe Hint -->
-  <div id="swipe-hint" class="hidden">
-    <img src="hand-swipe-icon.svg" alt="Swipe Right" class="swipe-icon">
-    <p class="swipe-caption">Swipe to navigate</p>
   </div>
 
   <!-- Scripts -->
