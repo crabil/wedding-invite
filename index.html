@@ -5,48 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Include Swiper.js for swipe functionality -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Swiper Container -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <!-- Slide 1: Intro -->
+      
+      <!-- Card 1: Intro -->
       <div class="swiper-slide">
-        <div id="intro">
+        <div class="card">
           <h1>Welcome to Our Wedding!</h1>
-          <p>Please select your preferred language:</p>
+          <p>Select your preferred language:</p>
           <button onclick="selectLanguage('en')">English</button>
           <button onclick="selectLanguage('de')">Deutsch</button>
         </div>
       </div>
-      <!-- Slide 2: RSVP -->
+
+      <!-- Card 2: RSVP -->
       <div class="swiper-slide">
-        <h2>RSVP</h2>
-        <form name="rsvp" method="POST" data-netlify="true">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="number" name="guests" placeholder="Number of Guests" required>
-          <button type="submit">Submit</button>
-        </form>
+        <div class="card">
+          <h2>RSVP</h2>
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="number" placeholder="Number of Guests" required>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
-      <!-- Slide 3: Gift Information -->
+
+      <!-- Card 3: Gift Info -->
       <div class="swiper-slide">
-        <h2>Gift Contributions</h2>
-        <p>We appreciate your generosity!</p>
-        <p><strong>IBAN:</strong> YOUR_IBAN_HERE</p>
-        <p><strong>BIC:</strong> YOUR_BIC_HERE</p>
+        <div class="card">
+          <h2>Gift Contributions</h2>
+          <p>We appreciate your generosity! You can deposit your gifts at:</p>
+          <p><strong>IBAN:</strong> DE12345678901234567890</p>
+          <p><strong>BIC:</strong> ABCDDEFF</p>
+        </div>
       </div>
+
     </div>
+
+    <!-- Pagination (Dots for Navigation) -->
+    <div class="swiper-pagination"></div>
   </div>
 
   <!-- Swipe Hint -->
   <div id="swipe-hint" class="hidden">
     <img src="hand-swipe-icon.svg" alt="Swipe Right" class="swipe-icon">
-    <p class="swipe-caption">Swipe right</p>
+    <p class="swipe-caption">Swipe to navigate</p>
   </div>
 
-  <!-- Include Swiper.js and Custom Script -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
